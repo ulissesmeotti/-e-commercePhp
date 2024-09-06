@@ -1,0 +1,75 @@
+/* Estilos para o body */
+body {
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Estilos para a seção de Visão Geral */
+.overview {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.overview h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.overview p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Estilos para a seção de Informações de Envio */
+.shipping {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.shipping-box {
+  width: calc(50% - 15px);
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shipping h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.shipping p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+.informations p{
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+}
+.informations h3{
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  
+}
+.informations{
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}

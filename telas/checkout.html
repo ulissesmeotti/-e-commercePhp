@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de CheckOut</title>
+    <link rel="stylesheet" type="text/css" href="checkout.css">
+</head>
+
+<body>
+    <form>
+        <h2>Informações Pessoais:</h2>
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" required>
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" required>
+        <label for="estadocivil">Estado Civil:</label>
+        <select id="estadocivil" name="estadocivil" required>
+            <option value="">Selecione</option>
+            <option value="solteiro">Solteiro</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Divorciado</option>
+            <option value="viuvo">Viúvo</option>
+        </select>
+        <label for="metodopagamento">Metodo de Pagamento:</label>
+        <select id="metodopagamento" name="metodopagamento" required>
+            <option value="">Selecione</option>
+            <option value="pix">Pix</option>
+            <option value="cartao">Cartao</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="boleto">Boleto</option>
+        </select>
+        <button type="button" id="gerar-nota-fiscal" onclick="gerarNotaFiscal()">Gerar Nota Fiscal</button>
+    </form>
+
+    <script>
+ function gerarNotaFiscal() {
+    var nome = document.getElementById('nome').value;
+    var cpf = document.getElementById('cpf').value;
+    var telefone = document.getElementById('telefone').value;
+    var endereco = document.getElementById('endereco').value;
+    var estado = document.getElementById('estado').value;
+    var estadoCivil = document.getElementById('estadocivil').value;
+    var metodopagamento = document.getElementById('metodopagamento').value;
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var produto = urlParams.get('produto');
+    var valor = urlParams.get('valor');
+
+    var notaFiscal = 'Nome: ' + nome + '\n';
+    notaFiscal += 'CPF: ' + cpf + '\n';
+    notaFiscal += 'Telefone: ' + telefone + '\n';
+    notaFiscal += 'Endereço: ' + endereco + '\n';
+    notaFiscal += 'Estado: ' + estado + '\n';
+    notaFiscal += 'Estado Civil: ' + estadoCivil + '\n';
+
+    var url = 'notafiscal.php?nota=' + encodeURIComponent(notaFiscal) + '&metodopagamento=' + encodeURIComponent(metodopagamento);
+    url += '&produto=' + encodeURIComponent(produto) + '&valor_venda=' + encodeURIComponent(valor);
+
+    window.location.href = url;
+}
+
+    </script>
+</body>
+
+</html>
